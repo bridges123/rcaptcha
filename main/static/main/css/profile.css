@@ -1,0 +1,334 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../img/imgBack.jpg') no-repeat center top / cover;
+}
+
+.main {
+    color: #bdc6db;
+    font-size: 16px;
+    text-decoration: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 11px 13px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 6px;
+}
+
+small {
+    color: #87CEFA;
+}
+
+.scsbutton {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  left: 38px;
+  box-shadow: 0 0 0 2px white;
+  padding: 13px 0;
+  width: 150px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scsbutton span {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  color: white;
+  z-index: 5;
+}
+
+.scsbutton:before, .closing-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.scsbutton:before {
+  transform: translateX(-100%);
+  background: #87CEFA;
+  transition: transform .3s cubic-bezier(.55, .055, .675, .19);
+}
+
+.scsbutton:after {
+  background: #413ad5;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.16, .73, .58, .62) .3s;
+}
+
+.scsbutton:hover:before, .closing-button:hover:after {
+  transform: translateX(0);
+}
+
+.table {
+    position: absolute;
+    left: 685px;
+    max-width: 530px;
+    padding: 7px 13px 7px 23px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 8px;
+}
+
+.table > p {
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin: 0 0 6px;
+}
+
+.tablebut {
+    position: absolute;
+    left: 947px;
+    margin-top: -17px;
+}
+
+.tablebut > div {
+    margin-bottom: 25px;
+}
+
+.delay {
+    padding: 7px 13px 7px 23px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 8px;
+}
+
+.keydiv {
+    padding: 10px;
+    padding-bottom: 29px;
+    background: #222427;
+    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 20%);
+    border-radius: 8px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+ }
+
+.kk {
+	color: #fff;
+    width: 65px;
+    outline: none;
+    border-width: 0px;
+    background: #00000000;
+    font: 0.8rem / 1.0 sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+    justify-content: space-between;
+    text-align: right;
+    float: right;
+}
+
+.text {
+	color: #bdc6db;
+    float: left;
+    padding: 3px;
+    font: 0.8rem / 1.0 sans-serif;
+ }
+
+.modetext {
+    color: #bdc6db;
+    font-size: 16px;
+    position: relative;
+    right: 8px;
+    bottom: 2px;
+}
+
+.switch-btn {
+    display: inline-block;
+    width: 36px; /* ширина */
+    height: 19.5px; /* высота */
+    border-radius: 19px; /* радиус скругления */
+    background: #bfbfbf; /* цвет фона */
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 101px;
+    transition-duration: 400ms; /* анимация */
+    top: 3px;
+}
+
+.switch-btn::after {
+    content: "";
+    height: 16.5px; /* высота кнопки */
+    width: 16.5px; /* ширина кнопки */
+    border-radius: 17px;
+    background: #fff; /* цвет кнопки */
+    top: 1.5px; /* положение кнопки по вертикали относительно основы */
+    left: 1.5px; /* положение кнопки по горизонтали относительно основы */
+    transition-duration: 400ms; /* анимация */
+    position: absolute;
+    z-index: 1;
+}
+
+.switch-on {
+    background: #118c4e;
+}
+
+.switch-on::after {
+    left: 17px;
+}
+
+.tomain {
+    color: #bdc6db;
+    font-size: 17px;
+    text-decoration: none;
+    position: fixed;
+    top: 13px;
+    right: 190px;
+    padding: 11px 13px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 6px;
+}
+
+.tomain:hover {
+    color: #87CEFA;
+}
+
+.tops {
+    color: #bdc6db;
+    font-size: 17px;
+    text-decoration: none;
+    position: fixed;
+    top: 13px;
+    right: 105px;
+    padding: 11px 13px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 6px;
+}
+
+.tops:hover {
+    color: #87CEFA;
+}
+
+.out {
+    color: #bdc6db;
+    font-size: 17px;
+    text-decoration: none;
+    position: fixed;
+    top: 13px;
+    right: 13px;
+    padding: 11px 13px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 6px;
+}
+
+.out:hover {
+    color: #87CEFA;
+}
+
+.tolk {
+    color: #bdc6db;
+    font-size: 17px;
+    text-decoration: none;
+    position: fixed;
+    top: 13px;
+    right: 13px;
+    padding: 11px 13px;
+    border: black;
+    border-style: inset;
+    border-width: 2px;
+    background: #222427;
+    border-radius: 6px;
+}
+
+.tolk:hover {
+    color: #87CEFA;
+}
+
+.username {
+    color: white;
+    font-size: 52px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 600px;
+    line-height: 1;
+    position: absolute;
+}
+
+.rates {
+    font-size: 50px;
+    margin-bottom: 7px;
+    font-weight: 750;
+    text-align: center;
+    color: #fff;
+    font-family: 'TimesNewRoman', sans-serif;
+}
+
+#topes {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.filter {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.filter > a {
+    margin: 1px;
+    color: #bdc6db;
+    outline: none;
+    background: rgba(0,0,0,0);
+    border-width: 0px;
+    text-decoration-line: none;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.filter > a:hover {
+    color: #ff4a4a;
+    text-decoration-line: none;
+    padding-bottom: 2px;
+    border-bottom: 2.2px solid #87CEFA;
+}
+
+.topes {
+    color: white;
+}
+
+#topes td, #topes th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    display: table-row;
+}

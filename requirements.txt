@@ -1,0 +1,2 @@
+Django==3.2.7
+pysqlite3==0.4.6

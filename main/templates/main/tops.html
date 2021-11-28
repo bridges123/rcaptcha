@@ -1,0 +1,105 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+{% endblock %}
+
+
+{% block title %}
+	<title>
+		Топы
+	</title>
+{% endblock %}
+
+
+{% block content %}
+	{% if not request.user.is_authenticated %}
+		<a class="main" href="{% url 'main' %}">Главная</a>
+	{% else %}
+		<div class="block" style="display: block;">
+			<a class="tomain" href="{% url 'main' %}">Главная</a>
+			<a class="tolk" href="{% url 'profile' %}">Личный Кабинет</a>
+			<h2 class="rates">Рейтинги</h2>
+			<div class="filter">
+				<a href="{% url 'tops_record' %}" id="record">Рекорд без задержки</a>
+				<a href="">|</a>
+				<a href="{% url 'tops_record_delay' %}" id="record_delay">Рекорд с задержкой</a>
+				<a href="">|</a>
+				<a href="{% url 'tops_average' %}" id="average">Среднее время</a>
+				<a href="">|</a>
+				<a href="{% url 'tops_count' %}" id="count">Кол-во капчей</a>
+			</div>
+			<table id="topes" style="margin: 0 auto; width: 940px;">
+				<tbody>
+					<tr class="topes" style="font-weight: bold">
+						<td class="topes" style="width: 30px;">
+							#
+						</td>
+						<td class="topes" style="width: 250px;">
+							Ник
+						</td>
+						<td class="topes" style="text-align: center; width: 500px">
+							Рекорд без задержки
+						</td>
+						<td class="topes" style="text-align: center; width: 500px">
+							Рекорд с задержкой
+						</td>
+						<td class="topes" style="text-align: center; width: 500px">
+							Среднее время
+						</td>
+						<td class="topes" style="text-align: center; width: 500px">
+							Кол-во капчей
+						</td>
+					</tr>
+					<script>
+						let allTime
+						let n
+						let p
+						let count
+						let iter = 1
+					</script>
+					{% for customer in customers %}
+						<tr class="topes">
+							<td class="topes num" style="width: 0px;">
+								{{ customer.num }}
+							</td>
+							<td class="topes nick" style="width: 0px;">
+									{{ customer.user.user.username }}
+							</td>
+							<td class="topes rec" style="text-align: center; width: 0px;">
+								{% if customer.user.record != 0.0 %}
+									{{ customer.user.record }}
+								{% else %}
+									-
+								{% endif %}
+							</td>
+							<td class="topes rec-delay" style="text-align: center; width: 0px;">
+								{% if customer.user.record_delay != 0.0 %}
+									{{ customer.user.record_delay }}
+								{% else %}
+									-
+								{% endif %}
+							</td>
+							<td class="topes avg" style="text-align: center; width: 0px;">
+								{% if customer.user.avg != 0.0 %}
+									{{ customer.user.avg }}
+								{% else %}
+									-
+								{% endif %}
+							</td>
+							<td class="topes" style="text-align: center; width: 0px;">
+								{% if customer.user.count != 0 %}
+									{{ customer.user.count }}
+								{% else %}
+									-
+								{% endif %}
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% endif %}
+{% endblock %}

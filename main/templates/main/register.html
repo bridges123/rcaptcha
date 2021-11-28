@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+{% endblock %}
+
+
+{% block title %}
+	<title>
+		Регистрация
+	</title>
+{% endblock %}
+
+
+{% block content %}
+	<a class="main" href="{% url 'main' %}">Главная</a>
+	<div class="row">
+		<div style="color: white">
+			<h3 class="text-center">Регистрация</h3>
+			<hr>
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{ form|crispy }}
+				<input type="submit" class="btn-success" value="Регистрация" style="margin-top: 10px; width: 110px; height: 40px">
+				<a href="{% url 'login' %}" style="position: relative; margin-left: 197px; top: 4px; font-size: 18px; text-decoration: none; color: #d3d3d3">Авторизация</a>
+			</form>
+		</div>
+	</div>
+{% endblock %}

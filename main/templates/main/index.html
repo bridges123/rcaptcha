@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+
+
+{% block title %}
+	<title>
+		Главная
+	</title>
+	<script src="{% static 'main/js/jquery.cookie.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+	<div class="msg" id="text">
+
+	</div>
+	{% if not request.user.is_authenticated %}
+		<a class="lk" href="{% url 'login' %}">Войти</a>
+	{% else %}
+		<a class="lk" href="{% url 'profile' %}">Личный Кабинет</a>
+	{% endif %}
+
+	<a class="info" href="https://vk.com/lsdfam">не спиздил, а адаптировал</a>
+
+	<div class="center" id="captcha">
+		<div id="all">
+			<div class="img">
+				<img src="" alt="Captcha" id="image">
+				<span id="code">
+
+				</span>
+			</div>
+		</div>
+	</div>
+	<div id="notf">
+		<img src="{% static 'main/img/notf.png' %}" alt="Notify">
+	</div>
+	<form action="" method="POST" id="postCap">
+		{% csrf_token %}
+		<input type="hidden" id="result" name="result" value="">
+	</form>
+	{% if request.user.is_authenticated %}
+		<input type="hidden" id="capKey_login" value="{{ customer.capKey }}">
+		<input type="hidden" id="delay_login" value="{{ customer.delay }}">
+	{% endif %}
+	<script>
+		$('.img').hide()
+		$('#notf').hide()
+		let capKeyCode
+		let delay
+		let minusRange
+		{% if request.user.is_authenticated %}
+			capKeyCode = $('#capKey_login').val()
+			const isDelay = $('#delay_login').val()
+			if (isDelay === '1') {
+				delay = 100
+				minusRange = 210
+			} else {
+				delay = 15
+				minusRange = 95
+			}
+		{% else %}
+			capKeyCode = 'KeyN'
+			delay = 15
+			minusRange = 95
+		{% endif %}
+	</script>
+	<script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
+{% endblock %}
