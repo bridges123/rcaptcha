@@ -80,16 +80,6 @@ WSGI_APPLICATION = 'rcaptcha.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'u1445230_base',
-#         'USER': 'u1445230_default',
-#         'PASSWORD': '7giQB3ivE0XW8Kqd',
-#         'HOST': 'localhost'
-#     }
-# }
-
 
 DATABASES = {
     'default': {
